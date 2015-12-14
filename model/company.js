@@ -1,7 +1,5 @@
-module.exports = {
-	Company : Company
-};
+module.exports = Company;
 
-var Company = function(){
-	
+var Company = function(text){
+	this.text = text;
 };
