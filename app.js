@@ -1,13 +1,11 @@
 var Twitter = require('twitter');
-var Test = require('./test');
-console.log('running');
-Test.test();
+// var Test = require('./test');
 
 var client = new Twitter({
-	consumer_key: 'hPVJAl7aFOITkXbJYTSvWDfX1',
-	consumer_secret: 'hy8qB32q4XPGrX7EvU01XkYz7OVmSpppPINUGsSYv1mmR2XPLy',
-	access_token_key: '3580455497-fO8H3jf7bjaPmiuuJiYcHG4SxYo3tylPKH84DXo',
-	access_token_secret: '764QqcYKoh7W6hROcvI5U8bmRZjrkEKqm3SyhRuntwb1i'
+	consumer_key: process.env.twitteranalyzer_consumerkey,
+	consumer_secret: process.env.twitteranalyzer_consumersecret,
+	access_token_key: process.env.twitteranalyzer_accesstokenkey,
+	access_token_secret: process.env.twitteranalyzer_accesstokensecret
 });
 
 function stream(params){
@@ -34,6 +32,3 @@ function statuses(params){
 		}
 	});
 }
-
-// var params = {screen_name: 'EthanPChung'};
-// stream(params);
