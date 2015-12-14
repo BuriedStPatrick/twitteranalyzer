@@ -1,13 +1,13 @@
 var Twitter = require('twitter');
-// var Test = require('./test');
+var config = require('./config.json');
+var companyList = require("./config.json");
 
-var client = new Twitter({
-	consumer_key: process.env.twitteranalyzer_consumerkey,
-	consumer_secret: process.env.twitteranalyzer_consumersecret,
-	access_token_key: process.env.twitteranalyzer_accesstokenkey,
-	access_token_secret: process.env.twitteranalyzer_accesstokensecret
-});
+init();
 
+function init(){
+	console.log('runnning');
+}
+	
 function stream(params){
 	client.stream('statuses/filter', {track: '$AAPL'}, function(stream){
 		stream.on('data', logTweet);
@@ -32,3 +32,12 @@ function statuses(params){
 		}
 	});
 }
+
+var client = new Twitter({
+	consumer_key: config.consumer_key,
+	consumer_secret: config.consumer_secret,
+	access_token_key: config.access_token_key,
+	access_token_secret: config.access_token_secret
+});
+
+stream();
