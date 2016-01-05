@@ -1,0 +1,2 @@
+F:\Repos\twitteranalyzer\obj\Debug\TwitterAnalyzer.njsprojResolveAssemblyReference.cache
+F:\Repos\twitteranalyzer\bin\Microsoft.NodejsTools.WebRole.dll

@@ -4,13 +4,16 @@ var StreamRunner = function(client, companies, successFn, errorFn){
 	this.successFn = successFn;
 	this.errorFn = errorFn;
 	
-	this.run = function (){
-		console.log('run()');
-		client.stream('statuses/filter', { track: '$AAPL' }, function (stream) {
+	function runStream(company) {
+		client.stream('statuses/filter', { track: company.id}, function (stream) {
 			stream.on('data', successFn);
 			stream.on('error', errorFn);
 		});
 	}
+	
+	this.run = function () {
+	    runStream(companies[0]);
+	}	
 }
 
 module.exports = StreamRunner;

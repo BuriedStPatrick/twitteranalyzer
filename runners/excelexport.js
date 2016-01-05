@@ -1,8 +1,7 @@
-var Datarow = require('../model/datarow');
-
+var json2csv = require('json2csv');
+ 
 function addRow(tweet){
-	console.log('logTweet()');
-	logTweet();
+	logTweet(tweet);
 }
 
 function logTweet(tweet) {
@@ -10,8 +9,7 @@ function logTweet(tweet) {
 }
 
 function toDataRow(tweet){
-	return new Datarow(tweet.text, tweet.numFollowers, 'TIMESTAMP');
-	//TODO: convert tweet to excel-row, return
+	
 }
 
 module.exports = {
